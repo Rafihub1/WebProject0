@@ -1,0 +1,132 @@
+// Color Variables
+$primary: rgb(45, 128, 253);
+$secondary: rgb(182, 182, 182);
+$dark: rgb(49, 75, 114);
+$light: rgb(207, 207, 207);
+
+// Utils
+.center {
+  align-self: center;
+  text-align: center;
+}
+.primary {
+  color: $primary;
+}
+.secondary {
+  color: $secondary;
+}
+.dark {
+  color: $dark;
+}
+.light {
+  color: $light;
+}
+
+//NAVBAR
+nav {
+  background-color: $secondary;
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  h1 {
+    color: $primary;
+    font-weight: 700;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding: 1.5rem 1rem;
+      a {
+        color: $dark;
+      }
+      a:hover {
+        text-decoration: none;
+      }
+    }
+
+    li:hover {
+      background-color: $light;
+    }
+  }
+
+  #active {
+    background-color: $light;
+  }
+}
+
+//ABOUT
+%side {
+  padding: 1rem;
+  margin: 0.3rem;
+  font-size: 1.5rem;
+  color: $dark;
+  border: 1px dashed $light;
+}
+
+.side-one {
+  @extend %side;
+  background-color: $secondary;
+}
+
+.side-two {
+  @extend %side;
+  background-color: $light;
+}
+
+//CONTACT
+img {
+  width: 20rem;
+  margin: 3rem auto;
+}
+
+//LEARN MORE
+table {
+  border-collapse: collapse;
+  width: 100%;
+
+  td,
+  th {
+    border: 1px solid $secondary;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: $light;
+  }
+
+  thead {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: $primary;
+    color: $light;
+  }
+}
+
+@media (max-width: 550px) {
+  nav {
+    div {
+      flex-direction: column;
+    }
+  }
+
+  #home {
+    h1 {
+      display: none;
+    }
+  }
+
+  #contact {
+    img {
+      width: 13rem;
+    }
+  }
+}
